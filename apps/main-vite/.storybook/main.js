@@ -20,4 +20,11 @@ module.exports = {
       ],
     });
   },
+  framework: {
+    name: '@storybook/react-vite',
+    options: {},
+  },
+  docs: {
+    autodocs: true,
+  },
 };
