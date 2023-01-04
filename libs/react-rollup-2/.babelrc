@@ -8,5 +8,5 @@
       }
     ]
   ],
-  "plugins": []
+  "plugins": ["@babel/plugin-syntax-flow"]
 }
