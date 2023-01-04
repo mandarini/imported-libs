@@ -16,6 +16,12 @@ npx nx build-storybook main-webpack
 
 The paths are NOT resolved correctly. It cannot find the imported library.
 
+Error:
+
+```
+[vite]: Rollup failed to resolve import "@imported-libs/react-vite" from "/Users/katerina/Projects/nrwl/test_nx_workspaces/imported-libs/apps/main-vite/src/app/app.tsx".
+```
+
 ```
 npx nx build-storybook main-vite
 ```
