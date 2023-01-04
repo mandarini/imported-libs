@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@imported-libs/react-rollup": ["libs/react-rollup/src/index.ts"],
+      "@imported-libs/react-vite": ["libs/react-vite/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
