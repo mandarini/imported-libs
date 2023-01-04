@@ -18,7 +18,10 @@
       "@imported-libs/react-rollup": ["libs/react-rollup/src/index.ts"],
       "@imported-libs/react-rollup-2": ["libs/react-rollup-2/src/index.ts"],
       "@imported-libs/react-vite": ["libs/react-vite/src/index.ts"],
-      "@imported-libs/react-vite-2": ["libs/react-vite-2/src/index.ts"]
+      "@imported-libs/react-vite-2": ["libs/react-vite-2/src/index.ts"],
+      "@imported-libs/utils/one": ["libs/utils/one/src/index.ts"],
+      "@imported-libs/utils/three-vite": ["libs/utils/three-vite/src/index.ts"],
+      "@imported-libs/utils/two": ["libs/utils/two/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
