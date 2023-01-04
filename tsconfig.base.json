@@ -16,7 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@imported-libs/react-rollup": ["libs/react-rollup/src/index.ts"],
-      "@imported-libs/react-vite": ["libs/react-vite/src/index.ts"]
+      "@imported-libs/react-rollup-2": ["libs/react-rollup-2/src/index.ts"],
+      "@imported-libs/react-vite": ["libs/react-vite/src/index.ts"],
+      "@imported-libs/react-vite-2": ["libs/react-vite-2/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
