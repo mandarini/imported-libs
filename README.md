@@ -63,6 +63,12 @@ npx storybook build
 
 The paths are NOT resolved correctly. It cannot find the imported library.
 
+Error:
+
+```
+[vite]: Rollup failed to resolve import "@imported-libs/react-vite" from "src/app/app.tsx".
+```
+
 ### Test it out
 
 #### Verify that normal build works
