@@ -100,31 +100,23 @@ The paths are resolved correctly, if I add the correct Vite config Storybook's c
   },
 ```
 
-#### Issue with `.js` configuration files
+#### All works on `.js` configuration files
 
-The main issue is that on `.js` configuration files I CANNOT use `viteTsConfigPaths`. So, in [`apps/main-vite/.storybook/main.js`](apps/main-vite/.storybook/main.js), when I try to use `vite-tsconfig-paths`, and I build Storybook like this:
+In [`apps/main-vite/.storybook/main.js`](apps/main-vite/.storybook/main.js), I use `vite-tsconfig-paths`, and I build Storybook like this:
 
 ```
 cd apps/main-vite
 npx storybook build
 ```
 
-I get the following error:
-
-```
-TypeError: viteTsConfigPaths is not a function
-```
-
 #### All works on `.ts` configuration files
 
-When I use the same configuration on a `.ts` file, it works. So, in [`apps/main-vite-ts/.storybook/main.ts`](apps/main-vite-ts/.storybook/main.ts), when I use `viteTsConfigPaths`, and I build Storybook like this:
+In [`apps/main-vite-ts/.storybook/main.ts`](apps/main-vite-ts/.storybook/main.ts), I use `viteTsConfigPaths`, and I build Storybook like this:
 
 ```
 cd apps/main-vite-ts
 npx storybook build
 ```
-
-it works!!
 
 #### Note - do not import the whole `vite.config.ts` file
 
