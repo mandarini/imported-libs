@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import viteTsConfigPaths from 'vite-tsconfig-paths';
@@ -14,13 +15,6 @@ export default defineConfig({
       root: '../../',
     }),
   ],
-
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  viteTsConfigPaths({
-  //    root: '../../',
-  //  }),
-  // },
 
   test: {
     globals: true,

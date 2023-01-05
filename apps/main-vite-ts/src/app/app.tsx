@@ -5,6 +5,7 @@ export function App() {
   return (
     <div className={styles['container']}>
     <ReactVite />
+    <p>React Vite</p>
   </div>
   );
 }
