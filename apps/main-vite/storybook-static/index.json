@@ -1,1 +1,0 @@
-{"v":4,"entries":{"app--docs":{"id":"app--docs","title":"App","name":"Docs","importPath":"./src/app/app.stories.tsx","type":"docs","tags":["docs","autodocs"],"storiesImports":[]},"app--primary":{"id":"app--primary","title":"App","name":"Primary","importPath":"./src/app/app.stories.tsx","tags":["story"],"type":"story"}}}
