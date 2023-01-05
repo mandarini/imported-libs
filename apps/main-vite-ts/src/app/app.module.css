@@ -1,0 +1,7 @@
+.container {
+  background-color: lightcoral;
+  height: 60vh;
+  width: 60vw;
+  padding: 40px;
+  border-radius: 10%;
+}

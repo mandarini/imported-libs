@@ -4,8 +4,8 @@ import { ReactVite } from '@imported-libs/react-vite';
 export function App() {
   return (
     <div className={styles['container']}>
-      <ReactVite />
-    </div>
+    <ReactVite />
+  </div>
   );
 }
 
