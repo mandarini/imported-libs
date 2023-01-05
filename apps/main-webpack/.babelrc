@@ -5,7 +5,7 @@
       {
         "runtime": "automatic"
       }
-    ]
-  ],
-  "plugins": ["@babel/plugin-syntax-flow"]
+    ],
+    "@babel/preset-typescript"
+  ]
 }
