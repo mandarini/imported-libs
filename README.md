@@ -69,6 +69,16 @@ git checkout sb/migrate-7
 yarn
 ```
 
+### Check the Storybook + Angular
+
+All works as it is!!! :D
+
+```
+npx nx build-storybook ngapp
+
+npx nx storybook ngapp
+```
+
 ### Check the Storybook + React + Webpack
 
 ```
@@ -76,7 +86,7 @@ cd apps/main-webpack
 npx storybook build
 ```
 
-Not working. Something with babel, but we'll see. [Here](https://app.warp.dev/block/w9ldDAC8OFtTfaiibElRD0). Could be that we do some transformations on the Nx executor.
+Not working. Something with babel, but we'll see. [Here](https://app.warp.dev/block/w9ldDAC8OFtTfaiibElRD0). [Possibly not reading the `.babelrc` file](https://github.com/storybookjs/storybook/issues/18961).
 
 ### Check the Storybook + React + Vite
 
