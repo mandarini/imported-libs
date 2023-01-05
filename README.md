@@ -28,29 +28,23 @@ The paths are resolved correctly, if I add the correct Vite config Storybook's c
   },
 ```
 
-#### Issue with `.js` configuration files
+The reason is that for versions of `@storybook/builder-vite` previous to v7, it does NOT read the `vite.config.ts` file automatically. [See here](https://github.com/storybookjs/storybook/issues/19391#issuecomment-1282243042).
 
-The main issue is that on `.js` configuration files I CANNOT use `viteTsConfigPaths`. So, in [`apps/main-vite/.storybook/main.js`](apps/main-vite/.storybook/main.js), when I try to use `vite-tsconfig-paths`, and I build Storybook like this:
+#### All works on `.js` configuration files
+
+In [`apps/main-vite/.storybook/main.js`](apps/main-vite/.storybook/main.js), I use `vite-tsconfig-paths`, and I build Storybook like this:
 
 ```
 npx nx build-storybook main-vite
 ```
 
-I get the following error:
-
-```
-TypeError: viteTsConfigPaths is not a function
-```
-
 #### All works on `.ts` configuration files
 
-When I use the same configuration on a `.ts` file, it works. So, in [`apps/main-vite-ts/.storybook/main.ts`](apps/main-vite-ts/.storybook/main.ts), when I use `viteTsConfigPaths`, and I build Storybook like this:
+In [`apps/main-vite-ts/.storybook/main.ts`](apps/main-vite-ts/.storybook/main.ts), I use `viteTsConfigPaths`, and I build Storybook like this:
 
 ```
 npx nx build-storybook main-vite-ts
 ```
-
-it works!!
 
 #### Note - do not import the whole `vite.config.ts` file
 
@@ -86,49 +80,25 @@ Not working. Something with babel, but we'll see. [Here](https://app.warp.dev/bl
 
 ### Check the Storybook + React + Vite
 
-The paths are resolved correctly, if I add the correct Vite config Storybook's configuration:
+The paths are resolved correctly. No need to add the extra Vite configuration for `@storybook/builder-vite` version 7!
 
-```
-  async viteFinal(config, { configType }) {
-    return mergeConfig(config, {
-      plugins: [
-        viteTsConfigPaths({
-          root: '../../../',
-        }),
-      ],
-    });
-  },
-```
+#### All works on `.js` configuration files
 
-#### Issue with `.js` configuration files
-
-The main issue is that on `.js` configuration files I CANNOT use `viteTsConfigPaths`. So, in [`apps/main-vite/.storybook/main.js`](apps/main-vite/.storybook/main.js), when I try to use `vite-tsconfig-paths`, and I build Storybook like this:
+In [`apps/main-vite/.storybook/main.js`](apps/main-vite/.storybook/main.js), I build Storybook like this:
 
 ```
 cd apps/main-vite
 npx storybook build
 ```
 
-I get the following error:
-
-```
-TypeError: viteTsConfigPaths is not a function
-```
-
 #### All works on `.ts` configuration files
 
-When I use the same configuration on a `.ts` file, it works. So, in [`apps/main-vite-ts/.storybook/main.ts`](apps/main-vite-ts/.storybook/main.ts), when I use `viteTsConfigPaths`, and I build Storybook like this:
+In [`apps/main-vite-ts/.storybook/main.ts`](apps/main-vite-ts/.storybook/main.ts), I build Storybook like this:
 
 ```
 cd apps/main-vite-ts
 npx storybook build
 ```
-
-it works!!
-
-#### Note - do not import the whole `vite.config.ts` file
-
-We cannot import and merge the whole Vite config from `vite.config.ts` file, because it will not work. We need to import only the `viteTsConfigPaths` plugin. The reason is that Storybook conflicts with the `'@vitejs/plugin-react'` plugin. [See here](https://github.com/storybookjs/storybook/issues/19365).
 
 ### Test it out
 
