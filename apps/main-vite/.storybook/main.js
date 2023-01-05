@@ -1,5 +1,5 @@
 const { mergeConfig } = require('vite');
-const viteTsConfigPaths = require('vite-tsconfig-paths');
+const viteTsConfigPaths = require('vite-tsconfig-paths').default;
 const rootMain = require('../../../.storybook/main');
 
 module.exports = {
