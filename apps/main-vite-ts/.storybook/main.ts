@@ -1,5 +1,4 @@
 module.exports = {
-  core: { builder: '@storybook/builder-vite' },
   stories: [
     '../src/app/**/*.stories.mdx',
     '../src/app/**/*.stories.@(js|jsx|ts|tsx)',

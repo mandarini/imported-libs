@@ -4,7 +4,6 @@ const viteTsConfigPaths = require('vite-tsconfig-paths');
 
 module.exports = {
   ...rootMain,
-  core: { ...rootMain.core, builder: '@storybook/builder-vite' },
   stories: [
     ...rootMain.stories,
     '../src/lib/**/*.stories.mdx',
@@ -19,5 +18,9 @@ module.exports = {
         }),
       ],
     });
+  },
+  framework: {
+    name: '@storybook/react-vite',
+    options: {},
   },
 };
