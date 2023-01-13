@@ -89,9 +89,25 @@ npx nx storybook main-webpack
 
 ### Check the Storybook + React + Vite
 
+The paths are resolved correctly, if I add the correct Vite config Storybook's configuration:
+
+```
+  async viteFinal(config, { configType }) {
+    return mergeConfig(config, {
+      plugins: [
+        viteTsConfigPaths({
+          root: '../../../',
+        }),
+      ],
+    });
+  },
+```
+
+The `@storybook/react-vite` framework does NOT read the `vite.config.ts` file automatically. [See here](https://github.com/storybookjs/storybook/issues/19391#issuecomment-1282243042).
+
 #### All works on `.js` configuration files
 
-In [`apps/main-vite/.storybook/main.js`](apps/main-vite/.storybook/main.js), I build Storybook like this:
+In [`apps/main-vite/.storybook/main.js`](apps/main-vite/.storybook/main.js), I use `vite-tsconfig-paths`, and I build Storybook like this:
 
 ```
 npx nx build-storybook main-vite
@@ -100,7 +116,7 @@ npx nx storybook main-vite
 
 #### All works on `.ts` configuration files
 
-In [`apps/main-vite-ts/.storybook/main.ts`](apps/main-vite-ts/.storybook/main.ts), I build Storybook like this:
+In [`apps/main-vite-ts/.storybook/main.ts`](apps/main-vite-ts/.storybook/main.ts), I use `viteTsConfigPaths`, and I build Storybook like this:
 
 ```
 npx nx build-storybook main-vite-ts

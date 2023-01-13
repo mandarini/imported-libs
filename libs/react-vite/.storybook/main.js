@@ -1,6 +1,4 @@
 const rootMain = require('../../../.storybook/main');
-const { mergeConfig } = require('vite');
-const viteTsConfigPaths = require('vite-tsconfig-paths').default;
 
 module.exports = {
   ...rootMain,
@@ -10,15 +8,6 @@ module.exports = {
     '../src/lib/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [...rootMain.addons],
-  async viteFinal(config, { configType }) {
-    return mergeConfig(config, {
-      plugins: [
-        viteTsConfigPaths({
-          root: '../../../',
-        }),
-      ],
-    });
-  },
   framework: {
     name: '@storybook/react-vite',
     options: {},
