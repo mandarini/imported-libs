@@ -44,9 +44,7 @@
       "options": {
         "uiFramework": "@storybook/react",
         "port": 4400,
-        "config": {
-          "configFolder": "libs/react-rollup/.storybook"
-        }
+        "configDir": "libs/react-rollup/.storybook"
       },
       "configurations": {
         "ci": {
@@ -56,13 +54,11 @@
     },
     "build-storybook": {
       "executor": "@nrwl/storybook:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": ["{options.outputDir}"],
       "options": {
         "uiFramework": "@storybook/react",
-        "outputPath": "dist/storybook/react-rollup",
-        "config": {
-          "configFolder": "libs/react-rollup/.storybook"
-        }
+        "configDir": "libs/react-rollup/.storybook",
+        "outputDir": "dist/storybook/react-rollup"
       },
       "configurations": {
         "ci": {

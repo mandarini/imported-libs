@@ -57,9 +57,7 @@
       "options": {
         "uiFramework": "@storybook/react",
         "port": 4400,
-        "config": {
-          "configFolder": "apps/main-vite/.storybook"
-        }
+        "configDir": "apps/main-vite/.storybook"
       },
       "configurations": {
         "ci": {
@@ -69,13 +67,11 @@
     },
     "build-storybook": {
       "executor": "@nrwl/storybook:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": ["{options.outputDir}"],
       "options": {
         "uiFramework": "@storybook/react",
-        "outputPath": "dist/storybook/main-vite",
-        "config": {
-          "configFolder": "apps/main-vite/.storybook"
-        }
+        "configDir": "apps/main-vite/.storybook",
+        "outputDir": "dist/storybook/main-vite"
       },
       "configurations": {
         "ci": {

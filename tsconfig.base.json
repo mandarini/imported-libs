@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@imported-libs/nglib": ["libs/nglib/src/index.ts"],
       "@imported-libs/react-rollup": ["libs/react-rollup/src/index.ts"],
       "@imported-libs/react-rollup-2": ["libs/react-rollup-2/src/index.ts"],
       "@imported-libs/react-vite": ["libs/react-vite/src/index.ts"],
