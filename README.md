@@ -66,7 +66,7 @@ npx nx build main-webpack
 
 ```
 git checkout storybook-7
-yarn
+rm -rf node_modules yarn-lock.json && yarn
 ```
 
 ### Check the Storybook + Angular
