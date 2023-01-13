@@ -2,7 +2,6 @@ import { mergeConfig } from 'vite';
 import viteTsConfigPaths from 'vite-tsconfig-paths';
 
 module.exports = {
-  core: { builder: '@storybook/builder-vite' },
   stories: [
     '../src/app/**/*.stories.mdx',
     '../src/app/**/*.stories.@(js|jsx|ts|tsx)',
@@ -16,5 +15,12 @@ module.exports = {
         }),
       ],
     });
+  },
+  framework: {
+    name: '@storybook/react-vite',
+    options: {},
+  },
+  docs: {
+    autodocs: true,
   },
 };

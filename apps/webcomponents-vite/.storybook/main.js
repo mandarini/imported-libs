@@ -5,7 +5,6 @@ const viteTsConfigPaths = require('vite-tsconfig-paths').default;
 
 module.exports = {
   ...rootMain,
-  core: { ...rootMain.core, builder: '@storybook/builder-vite' },
   stories: [
     ...rootMain.stories,
     '../src/app/**/*.stories.mdx',
@@ -20,5 +19,12 @@ module.exports = {
         }),
       ],
     });
+  },
+  framework: {
+    name: '@storybook/web-components-vite',
+    options: {},
+  },
+  docs: {
+    autodocs: true,
   },
 };

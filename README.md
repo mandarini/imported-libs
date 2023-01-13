@@ -65,7 +65,7 @@ npx nx build main-webpack
 ## FOR STORYBOOK v7
 
 ```
-git checkout sb/migrate-7
+git checkout storybook-7
 yarn
 ```
 
@@ -75,30 +75,27 @@ All works as it is!!! :D
 
 ```
 npx nx build-storybook ngapp
-
 npx nx storybook ngapp
 ```
 
 ### Check the Storybook + React + Webpack
 
-```
-cd apps/main-webpack
-npx storybook build
-```
+All works as it is!!! :D
 
-Not working. Something with babel, but we'll see. [Here](https://app.warp.dev/block/w9ldDAC8OFtTfaiibElRD0). [Possibly not reading the `.babelrc` file](https://github.com/storybookjs/storybook/issues/18961).
+```
+npx nx build-storybook main-webpack
+npx nx storybook main-webpack
+```
 
 ### Check the Storybook + React + Vite
-
-The paths are resolved correctly. No need to add the extra Vite configuration for `@storybook/builder-vite` version 7!
 
 #### All works on `.js` configuration files
 
 In [`apps/main-vite/.storybook/main.js`](apps/main-vite/.storybook/main.js), I build Storybook like this:
 
 ```
-cd apps/main-vite
-npx storybook build
+npx nx build-storybook main-vite
+npx nx storybook main-vite
 ```
 
 #### All works on `.ts` configuration files
@@ -106,18 +103,12 @@ npx storybook build
 In [`apps/main-vite-ts/.storybook/main.ts`](apps/main-vite-ts/.storybook/main.ts), I build Storybook like this:
 
 ```
-cd apps/main-vite-ts
-npx storybook build
+npx nx build-storybook main-vite-ts
+npx nx storybook main-vite-ts
 ```
 
-### Test it out
-
-#### Verify that normal build works
+### Test it out for all
 
 ```
-npx nx build main-vite
-```
-
-```
-npx nx build main-webpack
+nx run-many --target=build-storybook --all=true --parallel=true --skipNxCache
 ```
